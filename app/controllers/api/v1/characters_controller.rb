@@ -7,15 +7,41 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def show
+    character = Character.find(params[:id])
+    render json: @character
   end
 
   def create 
+    character = Character.new(character_params)
+    if character.save
+      render json:  CharacterSerializer.new(@character), status: :created
+    else
+      render json: {status: 'ERROR',
+                        message: 'Article Did NOT Save',
+                        data:article.errors},
+                        status: :unprocessable_entity
+    end
   end
 
   def update
+    character = Character.find(params[:id])
+    if @character.update(character_params)
+      render json:  CharacterSerializer.new(@character), status: :ok
+    else
+      render json: {status: 'ERROR',
+                    message: 'Character Did NOT Save',
+                    data:character.errors},
+                    status: :unprocessable_entity
+    end
   end
 
   def destroy
+    character = Character.find(params[:id])
+    character.destroy 
+    render json: {status: 'SUCCESS', 
+                  message:'Deleted Character', 
+                  data:character},
+                  status: :ok
   end
 
   private
