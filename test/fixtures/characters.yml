@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  character_klass: MyString
+  helm: MyString
+  shoulders: MyString
+  gloves: MyString
+  chest_armor: MyString
+  belt: MyString
+  pants: MyString
+  boots: MyString
+  bracers: MyString
+  amulet: MyString
+  ring_1: MyString
+  ring_2: MyString
+  weapon: MyString
+  offhand: MyString
+  gem_notes: MyText
+  kanais_cube: MyText
+  active_skills: MyText
+  passive_skills: MyText
+  general_build_notes: MyText
+  user_id: 1
+
+two:
+  title: MyString
+  character_klass: MyString
+  helm: MyString
+  shoulders: MyString
+  gloves: MyString
+  chest_armor: MyString
+  belt: MyString
+  pants: MyString
+  boots: MyString
+  bracers: MyString
+  amulet: MyString
+  ring_1: MyString
+  ring_2: MyString
+  weapon: MyString
+  offhand: MyString
+  gem_notes: MyText
+  kanais_cube: MyText
+  active_skills: MyText
+  passive_skills: MyText
+  general_build_notes: MyText
+  user_id: 1
