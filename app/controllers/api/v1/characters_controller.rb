@@ -2,7 +2,7 @@ class Api::V1::CharactersController < ApplicationController
   before_action :set_character, only: [:show, :update, :destroy]
 
   def index
-    characters = Character.order('created_at DESC')
+    characters = Character.all 
     render json: CharacterSerializer.new(characters)
   end
 
@@ -17,9 +17,9 @@ class Api::V1::CharactersController < ApplicationController
       render json:  CharacterSerializer.new(@character), status: :created
     else
       render json: {status: 'ERROR',
-                        message: 'Article Did NOT Save',
-                        data:article.errors},
-                        status: :unprocessable_entity
+                    message: 'Character Did NOT Save',
+                    data:character.errors},
+                    status: :unprocessable_entity
     end
   end
 
