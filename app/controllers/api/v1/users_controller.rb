@@ -1,8 +1,8 @@
-class Api::V1::UsersController < ApplicationController 
+class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def index
-    @user = User.all 
+    @users = User.all
     render json: @users
   end
 
@@ -45,5 +45,5 @@ class Api::V1::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :password)
     end
-
+    
 end
